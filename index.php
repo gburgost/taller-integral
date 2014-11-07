@@ -63,7 +63,7 @@
 									<header>
 										<h4>Código</h4>
 									</header>
-									<canvas id="registerBarcode" width="1150" height="80"></canvas>
+									<canvas id="registerBarcode" width="180" height="80"></canvas>
 								</div>
 								<a href="#" class="btn btn-primary">Guardar</a>
 								<div class="alert"></div>
