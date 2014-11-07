@@ -1,4 +1,3 @@
-hola
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,20 +27,13 @@ hola
 		                },
 
 		                success:  function () {
-		                        $('#registerBarcode').barcode(serial, "codabar", {barWidth:2, barHeight:60, output: "canvas" }
+		                        $('#registerBarcode').barcode(serial, "codabar", {barWidth:1, barHeight:60, output: "canvas" }
 								);
 		                }
 
 		        });
 		}
 	</script>
-	<script>
-		 // bind event handler to clear button
-      document.getElementById('clear').addEventListener('click', function() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-      }, false);
-	</script>
-
 </head>
 <body>
 	<div id="mainWrapper">
@@ -71,7 +63,7 @@ hola
 									<header>
 										<h4>Código</h4>
 									</header>
-									<canvas id="registerBarcode" width="200" height="80"></canvas>
+									<canvas id="registerBarcode" width="1150" height="80"></canvas>
 								</div>
 								<a href="#" class="btn btn-primary">Guardar</a>
 								<div class="alert"></div>

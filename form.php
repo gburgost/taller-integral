@@ -21,7 +21,6 @@
 	</p>
 	<p>
 		<input id="generar" class="btn btn-info" type="button" href="javascript:;" onclick="realizaProceso($('#serial').val());return false;" value="Genrerar"/>
-		<input type="button" id="clear" value="Clear">
 	</p>
 	<p>
 		<label for="stock">Stock</label>
