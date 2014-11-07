@@ -1,0 +1,66 @@
+body{
+	font-size: 16px;
+}
+
+#mainWrapper{
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 10px;
+	max-width: 1000px;
+}
+
+#titleContent{
+	background: rgba(0,0,0,0.7);
+	border-radius: 5px;
+	color: white;
+	padding: 10px;
+}
+section article{
+	margin-top: 15px;
+}
+.barCode{
+	border: 1px solid gray;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	height: 125px;
+	width: 48%;
+}
+.barCode header{
+	border-bottom: 1px solid gray;
+	height: 35px;
+	margin-top: -10px;
+}
+.barCode header h4{
+	background: #f7f7f9;
+	line-height: 34px;
+	text-align: center;
+}
+.alert{
+	display: none;
+}
+#aRegister{
+
+}
+#aSearch{
+	display: none;
+}
+#tSearch_wrapper{
+	margin-bottom: 30px;
+}
+#aSearch .container-fluid{
+	border-top: 1px solid gray;
+	display: none;
+	padding-top: 10px;
+}
+#aSearch table tr{
+	cursor: pointer;
+}
+footer{
+	background: rgba(0,0,0,0.7);
+	border-radius: 5px;
+	color: white;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 12px;
+
+}
