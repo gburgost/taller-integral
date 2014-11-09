@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>MPC registros</title>
+	<title>Buscar</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/jquery.dataTables.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
@@ -42,37 +42,17 @@
 		</header>
 		<nav>
 			<ul class="nav nav-tabs">
-				<li class="active">
-					<a href="#">Registrar</a>
+				<li>
+					<a href="index.php">Registrar</a>
 				</li>
-				<li><a href="buscar.php">Buscar</a></li>
+				<li class="active"><a href="#">Buscar</a></li>
 
 			</ul>
 		</nav>
-		<header id="titleContent"><h4>Registrar Persona</h4><hr></header>
+		<header id="titleContent"><h4>Buscar Persona</h4></header>
 		<section>
-			<article id="aRegister">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-6">
-							<?php include 'form.php'; ?>
-						</div>
-						<div class="col-md-6">
-							<div class="contentBardcode">
-								<div class="barCode">
-									<header>
-										<h4>Código</h4>
-									</header>
-									<canvas id="registerBarcode" width="180" height="80"></canvas>
-								</div>
-								<a href="#" class="btn btn-primary">Guardar</a>
-								<div class="alert"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</article>
-			<!--<article id="aSearch">
+			<article id="aSearch">
+				sadas
 				<table id="tSearch" class="table table-hover" cellspacing="1">
 					<caption>Listado de Personas</caption>
 					<thead>
@@ -113,7 +93,7 @@
 						<div class="col-md-6">
 							<h3>Editar personas <span></span></h3>
 							Ultima actualizacion: <i></i>
-							<?php // include 'form.php'; ?>
+							<?php include 'form.php'; ?>
 						</div>
 						<div class="col-md-6">
 							<div class="contentBardcode">
@@ -129,7 +109,7 @@
 						</div>
 					</div>
 				</div>
-			</artivle>-->
+			</article>
 		</section>
 	</div>
 	<footer>
@@ -137,5 +117,6 @@
 			hola
 		</p>
 	</footer>
+
 </body>
 </html>

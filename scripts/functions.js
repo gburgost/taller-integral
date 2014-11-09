@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('.nav li:first').on('click', function(e){
+	/*$('.nav li:first').on('click', function(e){
 		e.preventDefault();
 
 		$(this).addClass('active').next('li').removeClass('active');
@@ -19,9 +19,7 @@ $(document).ready(function(){
 
 		$('#titleContent').text('Buscar Persona');
 
-	})
-
-
+	})*/
 
 
 	var table = $('table').dataTable({

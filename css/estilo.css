@@ -10,13 +10,20 @@ body{
 }
 
 #titleContent{
-	background: rgba(0,0,0,0.7);
-	border-radius: 5px;
-	color: white;
+	background: #fff;
+	color: #555;
 	padding: 10px;
+	border: 1px solid #ddd;
+	border-top: none;
+	border-bottom: none;
+}
+section{
+	border: 1px solid #ddd;
+	border-top: none;
+	border-bottom: none;
 }
 section article{
-	margin-top: 15px;
+	padding-top: 15px;
 }
 .barCode{
 	border: 1px solid gray;
@@ -41,9 +48,7 @@ section article{
 #aRegister{
 
 }
-#aSearch{
-	display: none;
-}
+
 #tSearch_wrapper{
 	margin-bottom: 30px;
 }
