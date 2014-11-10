@@ -45,6 +45,7 @@
 				<li>
 					<a href="index.php">Registrar</a>
 				</li>
+				<li><a href="#">Registrar Contratista</a></li>
 				<li class="active"><a href="#">Buscar</a></li>
 
 			</ul>
@@ -52,7 +53,6 @@
 		<header id="titleContent"><h4>Buscar Persona</h4></header>
 		<section>
 			<article id="aSearch">
-				sadas
 				<table id="tSearch" class="table table-hover" cellspacing="1">
 					<caption>Listado de Personas</caption>
 					<thead>

@@ -1,4 +1,4 @@
-<form id="fRegister" class="form" name="form" action="registro_empleado.php" method="POST">
+<form id="fRegister" class="form" name="form" action="#" method="POST">
 
 	<p>
 		<label for="name">Nombre</label>
@@ -20,36 +20,27 @@
 		<label for="date">Fecha Nacimiento</label>
 		<input id="date" class="form-control" name="date" type="date" />
 	</p>
+
 	<p>
-		<label for="departamento">Departamento</label>
-		<?php include 'departamento.php'; ?>
+		<label for="contrato">Número de Contrato</label>
+		<input id="contrato" class="form-control" name="contrato" type="number" />
 	</p>
 	<p>
-		<label for="cargo">Cargo</label>
-		<input id="cargo" class="form-control" name="cargo" type="text" />
+		<label for="dateinic">Fecha de inicio contrato</label>
+		<input id="dateinic" class="form-control" name="dateinic" type="date" />
 	</p>
 	<p>
-		<label for="tipo_contrato">Tipo Contrato</label>
-		<select name="tipo_contrato" class="form-control" id="tipo_contrato">
-			<option value="0">Seleccione Tipo Contrato</option>
-			<option value="1">Plazo fijo</option>
-			<option value="2">Indefinido</option>
-		</select>
+		<label for="dateinic">Fecha de inicio contrato</label>
+		<input id="dateinic" class="form-control" name="dateinic" type="date" />
 	</p>
 	<p>
-		<label for="fechavin">Fecha de Vinculación</label>
-		<input id="fechavin" class="form-control" name="fechavin" type="date" />
+		<label for="datefin">Fecha de fin contrato</label>
+		<input id="datefin" class="form-control" name="datefin" type="date" />
 	</p>
-	<p>
-		<label for="fechades">Fecha de Desvinculación</label>
-		<input id="fechades" class="form-control" name="fechades" type="date" />
-	</p>
+
 	<p>
 		<input type="reset" class="btn btn-danger" value="Limpiar" />
 		<input id="doRegister" class="btn" type="submit" value="registrar">
 	</p>
 	<div class="alert alert-success" role="alert"></div>
 </form>
-
-
-

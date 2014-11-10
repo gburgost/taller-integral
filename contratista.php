@@ -1,4 +1,3 @@
-<?php include 'conexion.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,10 +42,10 @@
 		</header>
 		<nav>
 			<ul class="nav nav-tabs">
-				<li class="active">
-					<a href="#">Registrar Empleado</a>
+				<li>
+					<a href="index.php">Registrar Empleado</a>
 				</li>
-				<li><a href="contratista.php">Registrar Contratista</a></li>
+				<li class="active"><a href="#">Registrar Contratista</a></li>
 				<li><a href="buscar.php">Buscar</a></li>
 
 			</ul>
@@ -57,7 +56,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6">
-							<?php include 'form.php'; ?>
+							<?php include 'formcontratistas.php'; ?>
 						</div>
 						<div class="col-md-6">
 							<div class="contentBardcode">
