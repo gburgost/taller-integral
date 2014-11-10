@@ -64,11 +64,13 @@
 				echo '<table id="tSearch" class="table table-hover" cellspacing="1"> ';
 				echo '<caption>Listado de Personas</caption>';
 				echo '<thead>
+						<tr>
 							<th>Id</th>
 							<th>Rut</th>
 							<th>Nombre</th>
 							<th>Apellido</th>
 							<th>Tipo de Persona</th>
+						</tr>
 					</thead>';
 				for ($i=0; $i<$numfilas; $i++)
 				{
@@ -76,11 +78,10 @@
 					$numlista = $i + 1;
 					echo '<tbody>';
 					echo '<tr><td>'.$numlista.'</td>';
-					echo '<td>'.$fila['rut'].'</td>';
+					echo '<td>'.$fila['rut_persona'].'</td>';
 			        echo '<td>'.$fila['nombre'].'</td>';
 			        echo '<td>'.$fila['apellido'].'</td>';
-			        echo '<td>'.$fila['tipo_persona'].'</td>';
-			        echo
+			        echo '<td>'.$fila['tipo_persona'].'</td></tr>';
 					//echo '<td><a class="btn btn-success btn-sm" href="reporte_historial.php?id='.$fila['id_empleados'].'">ver</a></td></tr>';
 				}
 				echo '</tbody>';
