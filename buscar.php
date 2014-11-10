@@ -53,6 +53,37 @@
 		<header id="titleContent"><h4>Buscar Persona</h4></header>
 		<section>
 			<article id="aSearch">
+			<?php
+				$con = new DB;
+				$buscar = $con->conectar();
+				$strConsulta = "SELECT rut_persona, nombre, apellido, tipo_persona from persona";
+				$buscar = mysql_query($strConsulta);
+				$numfilas = mysql_num_rows($buscar);
+
+				echo '<table id="tSearch" class="table table-hover" cellspacing="1"> ';
+				echo '<caption>Listado de Personas</caption>'
+				echo '<thead>
+							<th>Id</th>
+							<th>Rut</th>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Tipo de Persona</th>
+					</thead>';
+				for ($i=0; $i<$numfilas; $i++)
+				{
+					$fila = mysql_fetch_array($buscar);
+					$numlista = $i + 1;
+					echo '<tbody>';
+					echo '<tr><td>'.$numlista.'</td>';
+					echo '<td>'.$fila['nombre_empleados'].'</td>';
+			        echo '<td>'.$fila['rut_empleados'].'</td>';
+					echo '<td><a class="btn btn-success btn-sm" href="reporte_historial.php?id='.$fila['id_empleados'].'">ver</a></td></tr>';
+				}
+				echo '</tbody>';
+				echo "</table>";
+			}
+			?>
+
 				<table id="tSearch" class="table table-hover" cellspacing="1">
 					<caption>Listado de Personas</caption>
 					<thead>

@@ -10,11 +10,11 @@
 	</p>
 
 	<p>
-		<label for="serial">Rut</label>
-		<input id="serial" class="form-control" name="serial" type="text"  />
+		<label for="rut">Rut</label>
+		<input id="rut" class="form-control" name="rut" type="text"  />
 	</p>
 	<p>
-		<input id="generar" class="btn btn-info" type="button" href="javascript:;" onclick="realizaProceso($('#serial').val());return false;" value="Genrerar"/>
+		<input id="generar" class="btn btn-info" type="button" href="javascript:;" onclick="realizaProceso($('#rut').val());return false;" value="Genrerar"/>
 	</p>
 	<p>
 		<label for="date">Fecha Nacimiento</label>
@@ -31,9 +31,9 @@
 	<p>
 		<label for="tipo_contrato">Tipo Contrato</label>
 		<select name="tipo_contrato" class="form-control" id="tipo_contrato">
-			<option value="0">Seleccione Tipo Contrato</option>
-			<option value="1">Plazo fijo</option>
-			<option value="2">Indefinido</option>
+			<option>Seleccione Tipo Contrato</option>
+			<option>Plazo fijo</option>
+			<option>Indefinido</option>
 		</select>
 	</p>
 	<p>
