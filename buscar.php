@@ -54,6 +54,7 @@
 		<section>
 			<article id="aSearch">
 			<?php
+				include_once("conexion.php");
 				$con = new DB;
 				$buscar = $con->conectar();
 				$strConsulta = "SELECT rut_persona, nombre, apellido, tipo_persona from persona";
@@ -61,7 +62,7 @@
 				$numfilas = mysql_num_rows($buscar);
 
 				echo '<table id="tSearch" class="table table-hover" cellspacing="1"> ';
-				echo '<caption>Listado de Personas</caption>'
+				echo '<caption>Listado de Personas</caption>';
 				echo '<thead>
 							<th>Id</th>
 							<th>Rut</th>
@@ -75,15 +76,17 @@
 					$numlista = $i + 1;
 					echo '<tbody>';
 					echo '<tr><td>'.$numlista.'</td>';
-					echo '<td>'.$fila['nombre_empleados'].'</td>';
-			        echo '<td>'.$fila['rut_empleados'].'</td>';
-					echo '<td><a class="btn btn-success btn-sm" href="reporte_historial.php?id='.$fila['id_empleados'].'">ver</a></td></tr>';
+					echo '<td>'.$fila['rut'].'</td>';
+			        echo '<td>'.$fila['nombre'].'</td>';
+			        echo '<td>'.$fila['apellido'].'</td>';
+			        echo '<td>'.$fila['tipo_persona'].'</td>';
+			        echo
+					//echo '<td><a class="btn btn-success btn-sm" href="reporte_historial.php?id='.$fila['id_empleados'].'">ver</a></td></tr>';
 				}
 				echo '</tbody>';
 				echo "</table>";
-			}
 			?>
-
+<!--
 				<table id="tSearch" class="table table-hover" cellspacing="1">
 					<caption>Listado de Personas</caption>
 					<thead>
@@ -116,9 +119,8 @@
 							<td>10</td>
 							<td>probando todo esto</td>
 						</tr>
-
 					</tbody>
-				</table>
+				</table>-->
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6">
