@@ -1,20 +1,21 @@
 <form id="fRegister" class="form" name="form" action="registro_empleado.php" method="POST">
 
 	<p>
-		<label for="name">Nombre</label>
-		<input id="name" class="form-control" name="name" type="text" required/>
+		<label for="rut">Código</label>
+		<input id="rut" class="form-control" name="rut" type="text"  />
+		<span id="resultado"> </span>
 	</p>
 	<p>
-		<label for="lastname">Apellido</label>
-		<input id="lastname" class="form-control" name="lastname" type="text" required/>
+		<input id="generar" class="btn btn-info" type="button" href="javascript:;" onclick="realizaProceso($('#rut').val());return false;" value="Generar"/>
 	</p>
 
 	<p>
-		<label for="rut">Rut</label>
-		<input id="rut" class="form-control" name="rut" type="text"  />
+		<label for="name">Nombre</label>
+		<input id="name" class="form-control" name="name" type="text" value="1"/>
 	</p>
 	<p>
-		<input id="generar" class="btn btn-info" type="button" href="javascript:;" onclick="realizaProceso($('#rut').val());return false;" value="Genrerar"/>
+		<label for="lastname">Apellido</label>
+		<input id="lastname" class="form-control" name="lastname" type="text" />
 	</p>
 	<p>
 		<label for="date">Fecha Nacimiento</label>
