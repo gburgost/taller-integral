@@ -4,15 +4,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MPC registros</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/jquery.dataTables.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/jquery.dataTables.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="scripts/functions.js"></script>
-	<script src="scripts/prefixfree.min.js"></script>
-	<script src="scripts/jquery.dataTables.js"></script>
-	<script src="scripts/jquery-barcode.js"></script>
+	<script src="../scripts/functions.js"></script>
+	<script src="../scripts/prefixfree.min.js"></script>
+	<script src="../scripts/jquery.dataTables.js"></script>
+	<script src="../scripts/jquery-barcode.js"></script>
 
 	<script>
 		function realizaProceso(serial){
