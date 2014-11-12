@@ -40,10 +40,11 @@ class conexion{
 
 		}
 	}
-*/
 
 $con= new conexion();
 $con ->recuperarDatos();
+*/
+
 
 
 ?>

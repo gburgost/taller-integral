@@ -169,20 +169,12 @@ function Footer()
 
 	FROM registro_entrada
 	Inner Join persona ON registro_entrada.rut_persona = persona.rut_persona
-	UNION
-	SELECT 	registro_salida.fechasalida,
-		 	registro_salida.horasalida,
-		 	registro_salida.salida,
-		 	persona.nombre,
-		 	persona.rut_persona
-	FROM registro_salida
-	Inner Join persona ON registro_salida.rut_persona = persona.rut_persona
 	WHERE persona.rut_persona = '$persona'";
 
 	$historial = mysql_query($strConsulta);
 	$numfilas = mysql_num_rows($historial);
 
-		for ($i=0; $i<$numfilas; $i++)
+	for ($i=0; $i<$numfilas; $i++)
 		{
 			$fila = mysql_fetch_array($historial);
 			$pdf->SetFont('Arial','',10);
@@ -195,14 +187,26 @@ function Footer()
 			}
 			else
 			{
-
 				$pdf->SetFillColor(102,204,51);
     			$pdf->SetTextColor(0);
 				$pdf->Row(array($fila['fechaentrada'], $fila['horaentrada'], $fila['entrada']));
 			}
 		}
 
-		for ($i=0; $i<$numfilas; $i++)
+$strConsulta =
+"SELECT 	registro_salida.fechasalida,
+		 	registro_salida.horasalida,
+		 	registro_salida.salida,
+		 	persona.nombre,
+		 	persona.rut_persona
+	FROM registro_salida
+	Inner Join persona ON registro_salida.rut_persona = persona.rut_persona
+	WHERE persona.rut_persona = '$persona'";
+
+
+	$historial = mysql_query($strConsulta);
+	$numfilas = mysql_num_rows($historial);
+	for ($i=0; $i<$numfilas; $i++)
 		{
 			$fila = mysql_fetch_array($historial);
 			$pdf->SetFont('Arial','',10);
