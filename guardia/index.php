@@ -55,20 +55,13 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6">
+							<h3>Entrada</h3>
 							<?php include 'form.php'; ?>
 						</div>
-						<!--<div class="col-md-6">
-							<div class="contentBardcode">
-								<div class="barCode">
-									<header>
-										<h4>Código</h4>
-									</header>
-									<canvas id="registerBarcode" width="180" height="80"></canvas>
-								</div>
-								<a href="#" class="btn btn-primary">Guardar</a>
-								<div class="alert"></div>
-							</div>
-						</div>-->
+						<div class="col-md-6">
+							<h3>Salida</h3>
+							<?php include 'formulariosalida.php' ?>
+						</div>
 					</div>
 				</div>
 			</article>

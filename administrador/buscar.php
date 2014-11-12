@@ -70,6 +70,7 @@
 							<th>Nombre</th>
 							<th>Apellido</th>
 							<th>Tipo de Persona</th>
+							<th>Ver</td>
 						</tr>
 					</thead>';
 				for ($i=0; $i<$numfilas; $i++)
@@ -81,8 +82,8 @@
 					echo '<td>'.$fila['rut_persona'].'</td>';
 			        echo '<td>'.$fila['nombre'].'</td>';
 			        echo '<td>'.$fila['apellido'].'</td>';
-			        echo '<td>'.$fila['tipo_persona'].'</td></tr>';
-					//echo '<td><a class="btn btn-success btn-sm" href="reporte_historial.php?id='.$fila['id_empleados'].'">ver</a></td></tr>';
+			        echo '<td>'.$fila['tipo_persona'].'</td>';
+					echo '<td><a class="btn btn-success btn-sm" href="reporte_historial.php?rut_persona='.$fila['rut_persona'].'">ver</a></td></tr>';
 				}
 				echo '</tbody>';
 				echo "</table>";
