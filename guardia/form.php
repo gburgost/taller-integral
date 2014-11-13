@@ -2,7 +2,7 @@
 
 	<p>
 		<label for="rut">Código</label>
-		<input id="rut" class="form-control" name="rut" type="text"  />
+		<input id="rut" class="form-control" name="rut" type="text" required />
 		<span id="resultado"> </span>
 	</p>
 	<p>

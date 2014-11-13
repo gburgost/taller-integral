@@ -92,6 +92,14 @@ section article{
 #aSearch table tr{
 	cursor: pointer;
 }
+#reloj{
+	text-align: right;
+    position: absolute;
+    right: 0;
+    top: .5em;
+    padding-right: 1em;
+}
+
 footer{
 	background: rgba(0,0,0,0.7);
 	border-radius: 5px;

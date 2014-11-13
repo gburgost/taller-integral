@@ -13,6 +13,7 @@
 	<script src="../scripts/prefixfree.min.js"></script>
 	<script src="../scripts/jquery.dataTables.js"></script>
 	<script src="../scripts/jquery-barcode.js"></script>
+	<script src="../scripts/reloj.js"></script>
 
 	<script>
 		function realizaProceso(serial){
@@ -35,7 +36,7 @@
 		}
 	</script>
 </head>
-<body>
+<body onload="Comenzar()">
 	<div id="mainWrapper">
 		<header>
 			<figure id="logo">
@@ -58,7 +59,11 @@
 
 			</ul>
 		</nav>
-		<header id="titleContent"><h4>Registrar Persona</h4><hr></header>
+		<header id="titleContent">
+			<h4>Registrar Persona</h4>
+			<div id="reloj"></div>
+
+			<hr></header>
 		<section>
 			<article id="aRegister">
 				<div class="container-fluid">
