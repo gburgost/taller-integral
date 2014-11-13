@@ -11,6 +11,8 @@
 
 
 
+
+
 		mysql_query("INSERT INTO registro_entrada (id_entrada, rut_persona, fechaentrada, horaentrada, entrada) VALUES('', '$rut_persona', '$fechaentrada', '$horaentrada', '$entrada' )");
 		echo "<script>
               alert('Registro realizado con exito');

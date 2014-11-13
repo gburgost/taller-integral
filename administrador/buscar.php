@@ -38,7 +38,17 @@
 <body>
 	<div id="mainWrapper">
 		<header>
-			<h1>Sistema de Registros</h1>
+			<figure id="logo">
+				<img src="../img/logompc.png" alt="mpc" width="100" />
+			</figure>
+			<div class="titulos">
+				<h1>Sistema de Registros</h1>
+			</div>
+			<div class="usuario">
+				<strong>Administrador</strong>
+				<p>Cristian Seura</p>
+			</div>
+
 		</header>
 		<nav>
 			<ul class="nav nav-tabs">
@@ -139,7 +149,6 @@
 									<canvas id="searchBarcode" width="120" height="70"></canvas>
 								</div>
 								<a href="#" class="btn btn-primary">Guardar</a>
-								<div class="alert"></div>
 							</div>
 						</div>
 					</div>
@@ -149,7 +158,7 @@
 	</div>
 	<footer>
 		<p>
-			hola
+			- © Copyright 2014 -
 		</p>
 	</footer>
 

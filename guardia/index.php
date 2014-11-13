@@ -38,14 +38,23 @@
 <body>
 	<div id="mainWrapper">
 		<header>
-			<h1>Sistema de Ingreso y Salida</h1>
+			<figure id="logo">
+				<img src="../img/logompc.png" alt="mpc" width="100" />
+			</figure>
+			<div class="titulos">
+				<h1>Sistema de Ingreso y Salida</h1>
+			</div>
+			<div class="usuario">
+				<strong>Guardia</strong>
+				<p>Patricio Escudero</p>
+			</div>
+
 		</header>
 		<nav>
 			<ul class="nav nav-tabs">
 				<li class="active">
 					<a href="#">Registrar Empleado</a>
 				</li>
-				<li><a href="buscar.php">Buscar</a></li>
 
 			</ul>
 		</nav>
@@ -127,7 +136,7 @@
 	</div>
 	<footer>
 		<p>
-			hola
+			- © Copyright 2014 -
 		</p>
 	</footer>
 </body>

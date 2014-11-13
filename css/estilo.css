@@ -1,7 +1,29 @@
 body{
 	font-size: 16px;
+	background: #B1B1B1;
 }
-
+header{
+	position: relative;
+}
+#logo, .titulos{
+	float: left;
+}
+#logo img{
+	border-radius: 5px;
+}
+.titulos{
+	width: 85%;
+	padding: 3em;
+	padding-top: 0;
+}
+.usuario{
+	position: absolute;
+	right: 0;
+	top: 1.5em;
+}
+.nav-tabs > li > a{
+	background: #E4E4E4;
+}
 #mainWrapper{
 	border-radius: 5px;
 	margin: 0 auto;
@@ -11,16 +33,19 @@ body{
 
 #titleContent{
 	background: #fff;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	border-top: none;
 	color: #555;
 	padding: 10px;
-	border: 1px solid #ddd;
-	border-top: none;
-	border-bottom: none;
 }
 section{
+	background: #fff;
 	border: 1px solid #ddd;
-	border-top: none;
 	border-bottom: none;
+	border-top: none;
+	box-shadow: 0px -50px 30px black;
+	padding-bottom: 2em;
 }
 section article{
 	padding-top: 15px;
@@ -28,9 +53,13 @@ section article{
 .barCode{
 	border: 1px solid gray;
 	border-radius: 4px;
+	margin: 0 auto;
 	margin-bottom: 10px;
 	height: 125px;
 	width: 38%;
+}
+.guardar{
+	margin-left: 10.4em;
 }
 .barCode header{
 	border-bottom: 1px solid gray;
@@ -43,7 +72,7 @@ section article{
 	text-align: center;
 }
 .alert{
-	display: none;
+
 }
 #aRegister{
 
@@ -51,6 +80,9 @@ section article{
 
 #tSearch_wrapper{
 	margin-bottom: 30px;
+}
+#aSearch{
+	padding: 0 1em;
 }
 #aSearch .container-fluid{
 	border-top: 1px solid gray;
@@ -64,8 +96,12 @@ footer{
 	background: rgba(0,0,0,0.7);
 	border-radius: 5px;
 	color: white;
-	margin: 0 auto;
+	margin: 1em auto;
 	max-width: 1000px;
 	padding: 12px;
-
+}
+footer p{
+	text-align: center;
+	vertical-align: middle;
+	margin: 0;
 }

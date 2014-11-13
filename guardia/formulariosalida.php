@@ -10,7 +10,6 @@
 	</p>
 	<p>
 		<input type="reset" class="btn btn-danger" value="Limpiar" />
-		<button id="doRegister" type="submit" class="btn" onclick = "this.form.action = 'procesar_salida.php'" value="accion 1">Salida</button>
+		<button id="doRegister" type="submit" class="btn btn-success" onclick = "this.form.action = 'procesar_salida.php'" value="accion 1">Salida</button>
 	</p>
-	<div class="alert alert-success" role="alert"></div>
 </form>

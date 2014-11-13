@@ -14,7 +14,7 @@
 		<input id="rut" class="form-control" name="rut" type="text"  />
 	</p>
 	<p>
-		<input id="generar" class="btn btn-info" type="button" href="javascript:;" onclick="realizaProceso($('#rut').val());return false;" value="Genrerar"/>
+		<input id="generar" class="btn btn-success" type="button" href="javascript:;" onclick="realizaProceso($('#rut').val());return false;" value="Genrerar"/>
 	</p>
 	<p>
 		<label for="date">Fecha Nacimiento</label>
@@ -46,9 +46,8 @@
 	</p>
 	<p>
 		<input type="reset" class="btn btn-danger" value="Limpiar" />
-		<input id="doRegister" class="btn" type="submit" value="registrar">
+		<input id="doRegister" class="btn btn-success" type="submit" value="registrar">
 	</p>
-	<div class="alert alert-success" role="alert"></div>
 </form>
 
 
