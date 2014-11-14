@@ -33,6 +33,19 @@
 
 		        });
 		}
+		/*function datos(rut_persona){
+			var parametros = {
+				"rut_persona" : rut_persona
+			};
+				$.ajax({
+					data: parametros,
+					url:  'traerdatos.php',
+					type: 'get',
+					success: function(event){
+						document.getElementById('mostrar').innerHTML = event;
+					}
+				});
+		}*/
 	</script>
 </head>
 <body>
@@ -98,6 +111,7 @@
 				echo '</tbody>';
 				echo "</table>";
 			?>
+
 <!--
 				<table id="tSearch" class="table table-hover" cellspacing="1">
 					<caption>Listado de Personas</caption>
@@ -132,13 +146,13 @@
 							<td>probando todo esto</td>
 						</tr>
 					</tbody>
-				</table>-->
+				</table>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6">
 							<h3>Editar personas <span></span></h3>
 							Ultima actualizacion: <i></i>
-							<?php include 'form.php'; ?>
+							<?php /*include 'form.php'; */?>
 						</div>
 						<div class="col-md-6">
 							<div class="contentBardcode">
@@ -152,7 +166,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</article>
 		</section>
 	</div>

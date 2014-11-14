@@ -9,8 +9,27 @@
 	$myusuario = mysql_query("select rut_persona from persona
                                  where rut_persona =  '".htmlentities($_POST["rut"])."'");
     $nmyusuario = mysql_num_rows($myusuario);
-    //Si existe el usuario, validamos también la contraseña ingresada y el estado del usuario...
-     if($nmyusuario != 0){
+
+
+
+    $lista = mysql_query("select * from lista_negra
+    							where rut_persona =  '".htmlentities($_POST["rut"])."'");
+    $fila = mysql_fetch_array($lista);
+    $lista = mysql_num_rows($lista);
+    $motivo = $fila['motivo'];
+
+
+
+
+    if($lista != 0)
+    {
+    	echo"<script>alert('Persona en la lista negra.\\n Motivo $motivo.');window.location.href=\"index.php\"</script>";
+
+
+    }
+
+    //Si existe el usuario, validamos también el estado
+     elseif($nmyusuario != 0){
           $sql = "select rut_persona
                from registro_persona
                where rut_persona = '".htmlentities($_POST["rut"])."'";

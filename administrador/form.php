@@ -14,9 +14,6 @@
 		<input id="rut" class="form-control" name="rut" type="text"  />
 	</p>
 	<p>
-		<input id="generar" class="btn btn-success" type="button" href="javascript:;" onclick="realizaProceso($('#rut').val());return false;" value="Genrerar"/>
-	</p>
-	<p>
 		<label for="date">Fecha Nacimiento</label>
 		<input id="date" class="form-control" name="date" type="date" />
 	</p>

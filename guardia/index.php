@@ -60,7 +60,7 @@
 			</ul>
 		</nav>
 		<header id="titleContent">
-			<h4>Registrar Persona</h4>
+			<h4>Registro de Entrada y Salida</h4>
 			<div id="reloj"></div>
 
 			<hr></header>
@@ -68,13 +68,13 @@
 			<article id="aRegister">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-6">
-							<h3>Entrada</h3>
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-8">
+							<h3>Código</h3>
 							<?php include 'form.php'; ?>
 						</div>
-						<div class="col-md-6">
-							<h3>Salida</h3>
-							<?php include 'formulariosalida.php' ?>
+						<div class="col-md-2">
 						</div>
 					</div>
 				</div>

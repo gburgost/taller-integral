@@ -39,6 +39,25 @@ header{
 	color: #555;
 	padding: 10px;
 }
+.registrar{
+	width: 92%;
+	margin-bottom: .5em;
+	margin-right: .5em;
+}
+.registrar, .borrar{
+	display: inline-block;
+}
+
+#botones{
+	text-align: center;
+}
+#botones button{
+	font-size: 20px;
+}
+#botones button:last-child{
+	margin-left: 2em;
+}
+
 section{
 	background: #fff;
 	border: 1px solid #ddd;

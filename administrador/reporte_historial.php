@@ -155,20 +155,21 @@ function Footer()
 
 		for($i=0;$i<1;$i++)
 			{
-				$pdf->Row(array('Fecha', 'Hora', 'Entrada/Salida'));
+				$pdf->Row(array('Fecha Entrada', 'Hora Entrada', 'Fecha Salida', 'Hora Salida'));
 			}
 
 	$historial = $con->conectar();
 	$persona= $_GET['rut_persona'];
 	$strConsulta =
-		 "SELECT registro_entrada.fechaentrada,
-		 		 registro_entrada.horaentrada,
-		 		 registro_entrada.entrada,
-		 		 persona.nombre,
-		 		 persona.rut_persona
+		 "SELECT registro_persona.fecha_entrada,
+				 registro_persona.hora_entrada,
+			 	 registro_persona.fecha_salida,
+				 registro_persona.hora_salida,
+				 persona.nombre,
+				 persona.rut_persona
 
-	FROM registro_entrada
-	Inner Join persona ON registro_entrada.rut_persona = persona.rut_persona
+	FROM registro_persona
+	Inner Join persona ON registro_persona.rut_persona = persona.rut_persona
 	WHERE persona.rut_persona = '$persona'";
 
 	$historial = mysql_query($strConsulta);
@@ -183,45 +184,13 @@ function Footer()
 			{
 				$pdf->SetFillColor(153,255,153);
     			$pdf->SetTextColor(0);
-				$pdf->Row(array($fila['fechaentrada'], $fila['horaentrada'], $fila['entrada']));
+				$pdf->Row(array($fila['fecha_entrada'], $fila['hora_entrada'], $fila['fecha_salida'], $fila['hora_salida']));
 			}
 			else
 			{
 				$pdf->SetFillColor(102,204,51);
     			$pdf->SetTextColor(0);
-				$pdf->Row(array($fila['fechaentrada'], $fila['horaentrada'], $fila['entrada']));
-			}
-		}
-
-$strConsulta =
-"SELECT 	registro_salida.fechasalida,
-		 	registro_salida.horasalida,
-		 	registro_salida.salida,
-		 	persona.nombre,
-		 	persona.rut_persona
-	FROM registro_salida
-	Inner Join persona ON registro_salida.rut_persona = persona.rut_persona
-	WHERE persona.rut_persona = '$persona'";
-
-
-	$historial = mysql_query($strConsulta);
-	$numfilas = mysql_num_rows($historial);
-	for ($i=0; $i<$numfilas; $i++)
-		{
-			$fila = mysql_fetch_array($historial);
-			$pdf->SetFont('Arial','',10);
-
-			if($i%2 == 1)
-			{
-				$pdf->SetFillColor(153,255,153);
-    			$pdf->SetTextColor(0);
-				$pdf->Row(array($fila['fechasalida'], $fila['horasalida'], $fila['salida']));
-			}
-			else
-			{
-				$pdf->SetFillColor(102,204,51);
-    			$pdf->SetTextColor(0);
-				$pdf->Row(array($fila['fechasalida'], $fila['horasalida'], $fila['salida']));
+				$pdf->Row(array($fila['fecha_entrada'], $fila['hora_entrada'], $fila['fecha_salida'], $fila['hora_salida']));
 			}
 		}
 

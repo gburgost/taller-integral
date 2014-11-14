@@ -54,14 +54,14 @@
 		<nav>
 			<ul class="nav nav-tabs">
 				<li class="active">
-					<a href="#">Registrar Empleado</a>
+					<a href="#">Registrar Empleado al Sistema</a>
 				</li>
 				<li><a href="#">Registrar Contratista</a></li>
 				<li><a href="buscar.php">Buscar</a></li>
 
 			</ul>
 		</nav>
-		<header id="titleContent"><h4>Registrar Empleado</h4><hr></header>
+		<header id="titleContent"><h4>Ingresar Nuevo Empleado</h4><hr></header>
 		<section>
 			<article id="aRegister">
 				<div class="container-fluid">
@@ -77,7 +77,8 @@
 									</header>
 									<canvas id="registerBarcode" width="180" height="80"></canvas>
 								</div>
-								<a href="#" class="guardar btn btn-success">Guardar</a>
+
+								<input id="generar" class=" guardar btn btn-success" type="button" href="javascript:;" onclick="realizaProceso($('#rut').val());return false;" value="Generar Código de Barra"/>
 							</div>
 						</div>
 					</div>
