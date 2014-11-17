@@ -35,11 +35,11 @@
           echo"<script>alert('La persona no existe en la empresa.');window.location.href=\"index.php\"</script>";
      }
 
+?>
 
 
 
-
-/*
+<!--
 
 
 	mysql_query("UPDATE registro_persona SET fecha_salida = '$fecha', hora_salida = '$hora' WHERE rut_persona = '$rut_persona'");
@@ -76,10 +76,4 @@ class conexion{
 
 $con= new conexion();
 $con ->recuperarDatos();
-*/
-
-
-
-?>
-</body>
-</html>
+-->
