@@ -1,4 +1,10 @@
 <?php include 'conexion.php'; ?>
+<?@session_start();
+if($_SESSION["autentica"] != "SIP"){
+	header("Location: login.php");
+	exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,8 +53,14 @@
 				<h1>Sistema de Ingreso y Salida</h1>
 			</div>
 			<div class="usuario">
-				<strong>Guardia</strong>
-				<p>Patricio Escudero</p>
+				<strong><?php echo $_SESSION["usuarioactual"]; ?></strong>
+				<p><?php
+					$guardia = $_SESSION["usuarioactual"];
+					$buscar = mysql_query("SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = $guardia");
+					$fila = mysql_fetch_array($buscar);
+					echo "Guardia: ".$fila["nombre"].  .$fila["epellido"] ;
+				?></p>
+				<a href="logout.php">Cerrar Sesión</a>
 			</div>
 
 		</header>
