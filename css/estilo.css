@@ -16,6 +16,9 @@ header{
 	padding: 3em;
 	padding-top: 0;
 }
+.login{
+	text-align: center;
+}
 .usuario{
 	position: absolute;
 	right: 0;
