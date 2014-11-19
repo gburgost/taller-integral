@@ -32,7 +32,9 @@
                window.location.href=\"index.php\"</script>";
           }
      }else{
-          echo '<span>El usuario y/o clave son incorrectas, vuelva a intentarlo.</span>';
+          echo '<div class="alert alert-danger" role="alert">El usuario y/o clave son incorrectas, vuelva a intentarlo.</div>';
+
+
      }
      mysql_close($link);
 ?>

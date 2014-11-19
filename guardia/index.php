@@ -58,7 +58,7 @@ if($_SESSION["autentica"] != "SIP"){
 					$guardia = $_SESSION["usuarioactual"];
 					$buscar = mysql_query("SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = $guardia");
 					$fila = mysql_fetch_array($buscar);
-					echo "Guardia: ".$fila["nombre"].  .$fila["epellido"] ;
+					echo 'Guardia: '.$fila['nombre_guardia'];
 				?></p>
 				<a href="logout.php">Cerrar Sesión</a>
 			</div>
