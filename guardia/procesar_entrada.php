@@ -7,56 +7,56 @@
 	$hora=date("H:i:s");
 
 	//Se realiza la validación si el usuario existe en el sistema
-	$myusuario = mysql_query("select rut_persona from persona
-                                 where rut_persona =  '".htmlentities($_POST["rut"])."'");
-    $nmyusuario = mysql_num_rows($myusuario);
+	$myusuario = mysqli_query($conexion, "SELECT rut_persona FROM persona WHERE rut_persona =  '".htmlentities($_POST["rut"])."'");
+    $nmyusuario = mysqli_num_rows($myusuario);
 
-    $lista = mysql_query("select * from lista_negra
-    							where rut_persona =  '".htmlentities($_POST["rut"])."'");
-    $fila = mysql_fetch_array($lista);
-    $lista = mysql_num_rows($lista);
+    $lista = mysqli_query($conexion,"SELECT * FROM lista_negra
+    							WHERE rut_persona =  '".htmlentities($_POST["rut"])."'");
+    $fila = mysqli_fetch_array($lista);
+    $lista = mysqli_num_rows($lista);
     $motivo = $fila['motivo'];
 
     //Se muestra si el usario esta en lista negra e imprime su motivo.
     if($lista != 0)
     {
-    	echo"<script>alert('Persona en la lista negra.\\n Motivo: $motivo.');window.location.href=\"index.php\"</script>";
+    	echo '<div class="alert alert-danger" role="alert"><strong>Persona en lista negra.</strong><p>Motivo: '.$motivo.'</p></div>';
+    	echo "<script>setTimeout('document.location.reload()',6000);</script>";
+
     }
 
     //Si existe el usuario lo validamos con su rut
      elseif($nmyusuario != 0){
-          $sql = "select rut_persona
-               from registro_persona
-               where rut_persona = '".htmlentities($_POST["rut"])."'";
-          $myclave = mysql_query($sql);
-          $nmyclave = mysql_num_rows($myclave);
+          $myclave = mysqli_query($conexion, "SELECT rut_persona
+               FROM registro_persona
+               WHERE rut_persona = '".htmlentities($_POST["rut"])."'");
+          $nmyclave = mysqli_num_rows($myclave);
 
           	//Se Valida el estado de la persona y se compara con el rut
           	 if ($nmyclave != 0){
-          	 	$sql = "select rut_persona
-               	from registro_persona
-               	where rut_persona = '".htmlentities($_POST["rut"])."' and estado = 'abierto'";
-		          $myclave = mysql_query($sql);
-		          $nmyclave = mysql_num_rows($myclave);
+		          $myclave = mysqli_query($conexion, "SELECT rut_persona FROM registro_persona WHERE rut_persona = '".htmlentities($_POST["rut"])."' and estado = 'abierto'");
+		          $nmyclave = mysqli_num_rows($myclave);
 		         //Si el estado esta en "abierto" se genera una alerta
 		          if ($nmyclave != 0){
-		          	echo"<script>alert('No se ha realizado una salida');window.location.href=\"index.php\"</script>";
+		          	echo '<div class="alert alert-danger" role="alert">No se ha realizado una salida.</div>';
+		          	echo "<script>setTimeout('document.location.reload()',6000);</script>";
 		          }
 		          //Si el estado es "cerrado" se insertan los datos en la tabla.
 		          else
 		          {
 		          	$estado = "abierto";
-          	 		mysql_query("INSERT INTO registro_persona (cod_registro, nro_garita, rut_persona, rut_guardia, fecha_entrada, hora_entrada, fecha_salida, hora_salida, estado) VALUES('', '$nro_garita', '$rut_persona', '$rut_guardia', '$fecha', '$hora', '', '', '$estado' )");
-            	echo"<script>alert('Registro de entrada con exito');window.location.href=\"index.php\"</script>";
+          	 		mysqli_query($conexion, "INSERT INTO registro_persona (cod_registro, nro_garita, rut_persona, rut_guardia, fecha_entrada, hora_entrada, fecha_salida, hora_salida, estado) VALUES('', '$nro_garita', '$rut_persona', '$rut_guardia', '$fecha', '$hora', '', '', '$estado' )");
+            	echo '<div class="alert alert-success" role="alert">Registro de <strong>entrada</strong> exitoso.</div>';
+            	echo "<script>setTimeout('document.location.reload()',4000);</script>";
 		          }
           }
           else{
           	$estado = "abierto";
-          	 mysql_query("INSERT INTO registro_persona (cod_registro, nro_garita, rut_persona, rut_guardia, fecha_entrada, hora_entrada, fecha_salida, hora_salida, estado) VALUES('', '$nro_garita', '$rut_persona', '$rut_guardia', '$fecha', '$hora', '', '', '$estado' )");
-            	echo"<script>alert('Registro de entrada con exito');window.location.href=\"index.php\"</script>";
+          	 mysqli_query($conexion, "INSERT INTO registro_persona (cod_registro, nro_garita, rut_persona, rut_guardia, fecha_entrada, hora_entrada, fecha_salida, hora_salida, estado) VALUES('', '$nro_garita', '$rut_persona', '$rut_guardia', '$fecha', '$hora', '', '', '$estado' )");
+            	echo '<div class="alert alert-success" role="alert">Registro de entrada exitoso.</div>';
+            	echo "<script>setTimeout('document.location.reload()',5000);</script>";
           }
      }else{
-          echo"<script>alert('La persona no existe en la empresa.');window.location.href=\"index.php\"</script>";
+          echo '<div class="alert alert-danger" role="alert">El rut ingresado no esta registrado en la empresa.</div>';
      }
 
 

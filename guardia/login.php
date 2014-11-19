@@ -17,7 +17,9 @@ else
   <link rel="stylesheet" href="../css/jquery.dataTables.css">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/estilo.css">
+
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../scripts/jquery.min.js"></script>
   <script src="../scripts/functions.js"></script>
   <script src="../scripts/prefixfree.min.js"></script>
   <script src="../scripts/jquery.dataTables.js"></script>
@@ -68,7 +70,7 @@ else
                     type: "POST",
                     data: "user="+user+"&pass="+pass,
                     success: function(resp){
-                      $('#resultado').html(resp)
+                      $('#resultado').fadeIn(1000).html(resp);
                     }
                   });
                 }

@@ -16,6 +16,7 @@ if($_SESSION["autentica"] != "SIP"){
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/estilo.css">
 	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	 <script src="../scripts/jquery.min.js"></script>
 	<script src="../scripts/functions.js"></script>
 	<script src="../scripts/prefixfree.min.js"></script>
 	<script src="../scripts/jquery.dataTables.js"></script>
@@ -23,24 +24,32 @@ if($_SESSION["autentica"] != "SIP"){
 	<script src="../scripts/reloj.js"></script>
 
 	<script>
-		function realizaProceso(serial){
-		        var parametros = {
-		                "serial" : serial
-		        };
-		        $.ajax({
-		                data:  parametros,
-		                url:   '#',
-		                type:  'post',
-		                beforeSend: function () {
-		                        $("#resultado").html("Procesando, espere por favor...");
-		                },
+        function entrar(rut)
+        {
+          $.ajax({
+            url: "procesar_entrada.php",
+            type: "POST",
+            data: "rut="+rut,
+            success: function(resp){
+              $('#resultado').fadeToggle(5000).html(resp);
+              return false;
 
-		                success:  function () {
-		                        $('#resultado').html(serial);
-		                }
+            }
+          });
+        }
+        function salir(rut)
+        {
+          $.ajax({
+            url: "procesar_salida.php",
+            type: "POST",
+            data: "rut="+rut,
+            success: function(resp){
+              $('#resultado').fadeToggle(5000).html(resp);
+              return false;
 
-		        });
-		}
+            }
+          });
+        }
 	</script>
 </head>
 <body onload="Comenzar()">
@@ -55,9 +64,9 @@ if($_SESSION["autentica"] != "SIP"){
 			<div class="usuario">
 				<strong><?php
 					$guardia = $_SESSION["usuarioactual"];
-					$buscar = mysql_query("SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = '$guardia'");
-					$fila = mysql_fetch_array($buscar);
-					echo 'Guardia: '.$fila['nombre_guardia'].' '.$fila['apellido_guardia'];
+					$buscar = mysqli_query($conexion, "SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = '$guardia'");
+					$fila = mysqli_fetch_array($buscar, MYSQLI_ASSOC);
+					echo 'Guardia: '.$fila["nombre_guardia"].' '.$fila["apellido_guardia"];
 				?></strong>
 				<p><?php echo 'Rut: ' .$guardia; ?></p>
 				<a href="logout.php">Cerrar Sesión</a>

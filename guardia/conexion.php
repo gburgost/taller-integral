@@ -1,17 +1,12 @@
 <?php
-	$host = "localhost";
-	$user = "root";
-	$pass = "root";
-	$db = "mpc";
 
-		$conexion=mysql_connect($host, $user, $pass);
-		mysql_select_db($db);
+	define("DB_HOST","localhost" );
+ 	define("DB_USER", "root");
+	define("DB_PASS", "root");
+	define("DB_DATABASE", "mpc" );
 
-		$query = "SELECT * FROM empleado";
-		$empleados = mysql_query($query, $conexion);
 
-		$rt = "SELECT * FROM persona";
-		$persona = mysql_query($rt, $conexion);
+		$conexion = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
 
 
 

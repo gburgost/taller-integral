@@ -6,33 +6,32 @@
 	$rut_persona = $_POST['rut'];
 	$fecha=date("d-m-Y");
 	$hora=date("H:i:s");
-	mysql_query("SELECT * FROM registro_persona WHERE rut_persona ='$rut_persona'");
 
-	$myusuario = mysql_query("select rut_persona from persona
-                                 where rut_persona =  '".htmlentities($_POST["rut"])."'");
-    $nmyusuario = mysql_num_rows($myusuario);
+
+	$myusuario = mysqli_query($conexion, "SELECT rut_persona FROM persona WHERE rut_persona =  '".htmlentities($_POST["rut"])."'");
+    $nmyusuario = mysqli_num_rows($myusuario);
     //Si existe el usuario, validamos también la contraseña ingresada y el estado del usuario...
      if($nmyusuario != 0){
-          $sql = "select *
-               from registro_persona
-               where rut_persona = '".htmlentities($_POST["rut"])."'
-               and estado = 'abierto'";
-          $myclave = mysql_query($sql);
-          $nmyclave = mysql_num_rows($myclave);
-          $fila = mysql_fetch_array($myclave);
+          $myclave = mysqli_query($conexion, "SELECT * FROM registro_persona WHERE rut_persona = '".htmlentities($_POST["rut"])."'
+               and estado = 'abierto'");
+          $nmyclave = mysqli_num_rows($myclave);
+          $fila = mysqli_fetch_array($myclave);
 
 
           if ($nmyclave != 0){
           	$estado = "abierto";
-          	mysql_query("UPDATE registro_persona SET fecha_salida = '$fecha', hora_salida = '$hora', estado = 'cerrado' WHERE rut_persona = '$rut_persona' and estado ='$estado' ");
-          	echo"<script>alert('Registro de salida con exito');window.location.href=\"index.php\"</script>";
+          	mysqli_query($conexion, "UPDATE registro_persona SET fecha_salida = '$fecha', hora_salida = '$hora', estado = 'cerrado' WHERE rut_persona = '$rut_persona' and estado ='$estado' ");
+
+          	echo '<div class="alert alert-success" role="alert">Registro de <strong>salida</strong> exitoso.</div>';
+            echo "<script>setTimeout('document.location.reload()',4000);</script>";
+
           }
           else{
-          	echo"<script>alert('No se ha realizado una entrada');window.location.href=\"index.php\"</script>";
+          	echo '<div class="alert alert-danger" role="alert">No se ha realizado una <strong>entrada</strong>.</div>';
           }
 
      }else{
-          echo"<script>alert('La persona no existe en la empresa.');window.location.href=\"index.php\"</script>";
+         echo '<div class="alert alert-danger" role="alert">El rut ingresado no esta registrado en la empresa.</div>';
      }
 
 ?>
