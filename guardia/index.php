@@ -53,13 +53,13 @@ if($_SESSION["autentica"] != "SIP"){
 				<h1>Sistema de Ingreso y Salida</h1>
 			</div>
 			<div class="usuario">
-				<strong><?php echo $_SESSION["usuarioactual"]; ?></strong>
-				<p><?php
+				<strong><?php
 					$guardia = $_SESSION["usuarioactual"];
-					$buscar = mysql_query("SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = $guardia");
+					$buscar = mysql_query("SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = '$guardia'");
 					$fila = mysql_fetch_array($buscar);
-					echo 'Guardia: '.$fila['nombre_guardia'];
-				?></p>
+					echo 'Guardia: '.$fila['nombre_guardia'].' '.$fila['apellido_guardia'];
+				?></strong>
+				<p><?php echo 'Rut: ' .$guardia; ?></p>
 				<a href="logout.php">Cerrar Sesión</a>
 			</div>
 
