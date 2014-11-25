@@ -2,6 +2,7 @@
 <?@session_start();
 if($_SESSION["autentica"] != "SIP"){
 	header("Location: login.php");
+	echo"AAA";
 	exit();
 }
 ?>
@@ -15,8 +16,8 @@ if($_SESSION["autentica"] != "SIP"){
 	<link rel="stylesheet" href="../css/jquery.dataTables.css">
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/estilo.css">
-	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	 <script src="../scripts/jquery.min.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="../scripts/functions.js"></script>
 	<script src="../scripts/prefixfree.min.js"></script>
 	<script src="../scripts/jquery.dataTables.js"></script>
@@ -31,7 +32,7 @@ if($_SESSION["autentica"] != "SIP"){
             type: "POST",
             data: "rut="+rut,
             success: function(resp){
-              $('#resultado').fadeToggle(5000).html(resp);
+              $('#resultado').html(resp);
               return false;
 
             }
@@ -44,7 +45,7 @@ if($_SESSION["autentica"] != "SIP"){
             type: "POST",
             data: "rut="+rut,
             success: function(resp){
-              $('#resultado').fadeToggle(5000).html(resp);
+              $('#resultado').html(resp);
               return false;
 
             }
@@ -64,8 +65,8 @@ if($_SESSION["autentica"] != "SIP"){
 			<div class="usuario">
 				<strong><?php
 					$guardia = $_SESSION["usuarioactual"];
-					$buscar = mysqli_query($conexion, "SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = '$guardia'");
-					$fila = mysqli_fetch_array($buscar, MYSQLI_ASSOC);
+					$buscar = mysqli_query($conexion, "SELECT nombre_guardia, apellido_guardia FROM guardia WHERE rut_guardia = '$guardia'");
+					$fila = mysqli_fetch_array($buscar);
 					echo 'Guardia: '.$fila["nombre_guardia"].' '.$fila["apellido_guardia"];
 				?></strong>
 				<p><?php echo 'Rut: ' .$guardia; ?></p>
