@@ -2,14 +2,22 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
+<<<<<<< HEAD
 -- Servidor: localhost
 -- Tiempo de generación: 25-11-2014 a las 04:40:38
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
+=======
+-- Host: localhost:8889
+-- Generation Time: Nov 20, 2014 at 01:17 AM
+-- Server version: 5.5.38
+-- PHP Version: 5.6.2
+>>>>>>> FETCH_HEAD
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+<<<<<<< HEAD
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,24 +26,43 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `mpc`
+=======
+--
+-- Database: `mpc`
+>>>>>>> FETCH_HEAD
 --
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `departamento`
 --
 
 CREATE TABLE IF NOT EXISTS `departamento` (
+=======
+-- Table structure for table `departamento`
+--
+
+CREATE TABLE `departamento` (
+>>>>>>> FETCH_HEAD
 `id_departamento` int(255) NOT NULL,
   `nombre_departamento` varchar(50) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Volcado de datos para la tabla `departamento`
 --
 
 INSERT INTO `departamento` (`id_departamento`, `nombre_departamento`) VALUES
+=======
+-- Dumping data for table `departamento`
+--
+
+INSERT INTO `departamento` (`id_departamento`, `nombre_departamento`) VALUES
+(1, 'SELECCIONE DEPARTAMENTO'),
+>>>>>>> FETCH_HEAD
 (2, 'GERENCIA'),
 (3, 'CONTABILIDAD'),
 (4, 'ADMINSITRACION'),
@@ -48,10 +75,17 @@ INSERT INTO `departamento` (`id_departamento`, `nombre_departamento`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `empleado`
 --
 
 CREATE TABLE IF NOT EXISTS `empleado` (
+=======
+-- Table structure for table `empleado`
+--
+
+CREATE TABLE `empleado` (
+>>>>>>> FETCH_HEAD
 `id_empleado` int(255) NOT NULL,
   `rut_persona` char(10) NOT NULL,
   `fecha_vinculacion` date NOT NULL,
@@ -62,7 +96,11 @@ CREATE TABLE IF NOT EXISTS `empleado` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Volcado de datos para la tabla `empleado`
+=======
+-- Dumping data for table `empleado`
+>>>>>>> FETCH_HEAD
 --
 
 INSERT INTO `empleado` (`id_empleado`, `rut_persona`, `fecha_vinculacion`, `fecha_desvinculacion`, `tipo_contrato`, `cargo`, `id_departamento`) VALUES
@@ -78,10 +116,17 @@ INSERT INTO `empleado` (`id_empleado`, `rut_persona`, `fecha_vinculacion`, `fech
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `guardia`
 --
 
 CREATE TABLE IF NOT EXISTS `guardia` (
+=======
+-- Table structure for table `guardia`
+--
+
+CREATE TABLE `guardia` (
+>>>>>>> FETCH_HEAD
   `rut_guardia` varchar(10) NOT NULL,
   `nombre_guardia` varchar(20) NOT NULL,
   `apellido_guardia` varchar(20) NOT NULL,
@@ -89,7 +134,11 @@ CREATE TABLE IF NOT EXISTS `guardia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Volcado de datos para la tabla `guardia`
+=======
+-- Dumping data for table `guardia`
+>>>>>>> FETCH_HEAD
 --
 
 INSERT INTO `guardia` (`rut_guardia`, `nombre_guardia`, `apellido_guardia`, `fecha_nac`) VALUES
@@ -99,17 +148,28 @@ INSERT INTO `guardia` (`rut_guardia`, `nombre_guardia`, `apellido_guardia`, `fec
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `lista_negra`
 --
 
 CREATE TABLE IF NOT EXISTS `lista_negra` (
+=======
+-- Table structure for table `lista_negra`
+--
+
+CREATE TABLE `lista_negra` (
+>>>>>>> FETCH_HEAD
 `id_lista` int(255) NOT NULL,
   `rut_persona` varchar(10) NOT NULL,
   `motivo` varchar(140) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Volcado de datos para la tabla `lista_negra`
+=======
+-- Dumping data for table `lista_negra`
+>>>>>>> FETCH_HEAD
 --
 
 INSERT INTO `lista_negra` (`id_lista`, `rut_persona`, `motivo`) VALUES
@@ -118,10 +178,17 @@ INSERT INTO `lista_negra` (`id_lista`, `rut_persona`, `motivo`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `login`
 --
 
 CREATE TABLE IF NOT EXISTS `login` (
+=======
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+>>>>>>> FETCH_HEAD
 `id_login` int(11) NOT NULL,
   `user` varchar(10) NOT NULL,
   `pass` varchar(16) NOT NULL,
@@ -129,7 +196,11 @@ CREATE TABLE IF NOT EXISTS `login` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Volcado de datos para la tabla `login`
+=======
+-- Dumping data for table `login`
+>>>>>>> FETCH_HEAD
 --
 
 INSERT INTO `login` (`id_login`, `user`, `pass`, `rol`) VALUES
@@ -139,10 +210,17 @@ INSERT INTO `login` (`id_login`, `user`, `pass`, `rol`) VALUES
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `persona`
 --
 
 CREATE TABLE IF NOT EXISTS `persona` (
+=======
+-- Table structure for table `persona`
+--
+
+CREATE TABLE `persona` (
+>>>>>>> FETCH_HEAD
 `id` int(255) NOT NULL,
   `rut_persona` varchar(10) NOT NULL,
   `nombre` varchar(50) NOT NULL,
@@ -152,7 +230,11 @@ CREATE TABLE IF NOT EXISTS `persona` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Volcado de datos para la tabla `persona`
+=======
+-- Dumping data for table `persona`
+>>>>>>> FETCH_HEAD
 --
 
 INSERT INTO `persona` (`id`, `rut_persona`, `nombre`, `apellido`, `fecha_nac`, `tipo_persona`) VALUES
@@ -167,10 +249,17 @@ INSERT INTO `persona` (`id`, `rut_persona`, `nombre`, `apellido`, `fecha_nac`, `
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `punto_acceso`
 --
 
 CREATE TABLE IF NOT EXISTS `punto_acceso` (
+=======
+-- Table structure for table `punto_acceso`
+--
+
+CREATE TABLE `punto_acceso` (
+>>>>>>> FETCH_HEAD
   `nro_garita` int(2) NOT NULL,
   `descripcion` varchar(140) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -178,6 +267,7 @@ CREATE TABLE IF NOT EXISTS `punto_acceso` (
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `registro_persona`
 --
 
@@ -186,15 +276,32 @@ CREATE TABLE IF NOT EXISTS `registro_persona` (
   `nro_garita` int(2) DEFAULT NULL,
   `rut_persona` varchar(10) NOT NULL,
   `rut_guardia` varchar(10) DEFAULT NULL,
+=======
+-- Table structure for table `registro_persona`
+--
+
+CREATE TABLE `registro_persona` (
+`cod_registro` int(255) NOT NULL,
+  `nro_garita` int(2) NOT NULL,
+  `rut_persona` varchar(10) NOT NULL,
+  `rut_guardia` varchar(10) NOT NULL,
+>>>>>>> FETCH_HEAD
   `fecha_entrada` varchar(10) DEFAULT NULL,
   `hora_entrada` varchar(10) DEFAULT NULL,
   `fecha_salida` varchar(10) DEFAULT NULL,
   `hora_salida` varchar(10) DEFAULT NULL,
   `estado` varchar(10) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `registro_persona`
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registro_persona`
+>>>>>>> FETCH_HEAD
 --
 
 INSERT INTO `registro_persona` (`cod_registro`, `nro_garita`, `rut_persona`, `rut_guardia`, `fecha_entrada`, `hora_entrada`, `fecha_salida`, `hora_salida`, `estado`) VALUES
@@ -221,6 +328,7 @@ INSERT INTO `registro_persona` (`cod_registro`, `nro_garita`, `rut_persona`, `ru
 (89, 0, '18393479-1', '', '19-11-2014', '16:17:44', '19-11-2014', '17:45:13', 'cerrado'),
 (90, 0, '13015775-0', '', '19-11-2014', '17:42:21', '19-11-2014', '17:57:44', 'cerrado'),
 (91, 0, '18393479-1', '', '19-11-2014', '17:45:31', '19-11-2014', '17:45:52', 'cerrado'),
+<<<<<<< HEAD
 (92, 0, '18393479-1', '', '19-11-2014', '17:56:47', '19-11-2014', '17:57:14', 'cerrado'),
 (93, 0, '18393479-1', '', '19-11-2014', '21:40:31', '19-11-2014', '22:13:10', 'cerrado'),
 (94, 0, '18393479-1', '', '20-11-2014', '09:53:27', '21-11-2014', '10:42:59', 'cerrado'),
@@ -258,95 +366,162 @@ INSERT INTO `registro_persona` (`cod_registro`, `nro_garita`, `rut_persona`, `ru
 (126, 0, '18393479-1', '', '23-11-2014', '20:02:55', '23-11-2014', '20:05:48', 'cerrado'),
 (127, 0, '18393479-1', '', '23-11-2014', '20:05:56', '24-11-2014', '22:04:12', 'cerrado'),
 (128, 0, '18393479-1', '', '24-11-2014', '22:04:32', '24-11-2014', '22:04:45', 'cerrado');
+=======
+(92, 0, '18393479-1', '', '19-11-2014', '17:56:47', '19-11-2014', '17:57:14', 'cerrado');
+>>>>>>> FETCH_HEAD
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estructura de tabla para la tabla `turno_guardia`
 --
 
 CREATE TABLE IF NOT EXISTS `turno_guardia` (
+=======
+-- Table structure for table `turno_guardia`
+--
+
+CREATE TABLE `turno_guardia` (
+>>>>>>> FETCH_HEAD
   `nro_garita` int(2) NOT NULL,
   `rut_guardia` varchar(10) NOT NULL,
   `jornada` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Índices para tablas volcadas
 --
 
 --
 -- Indices de la tabla `departamento`
+=======
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `departamento`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `departamento`
  ADD PRIMARY KEY (`id_departamento`);
 
 --
+<<<<<<< HEAD
 -- Indices de la tabla `empleado`
+=======
+-- Indexes for table `empleado`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `empleado`
  ADD PRIMARY KEY (`id_empleado`);
 
 --
+<<<<<<< HEAD
 -- Indices de la tabla `guardia`
+=======
+-- Indexes for table `guardia`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `guardia`
  ADD PRIMARY KEY (`rut_guardia`);
 
 --
+<<<<<<< HEAD
 -- Indices de la tabla `lista_negra`
+=======
+-- Indexes for table `lista_negra`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `lista_negra`
  ADD PRIMARY KEY (`id_lista`);
 
 --
+<<<<<<< HEAD
 -- Indices de la tabla `login`
+=======
+-- Indexes for table `login`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `login`
  ADD PRIMARY KEY (`id_login`);
 
 --
+<<<<<<< HEAD
 -- Indices de la tabla `persona`
+=======
+-- Indexes for table `persona`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `persona`
  ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- Indices de la tabla `registro_persona`
+=======
+-- Indexes for table `registro_persona`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `registro_persona`
  ADD PRIMARY KEY (`cod_registro`);
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
 -- AUTO_INCREMENT de la tabla `departamento`
+=======
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `departamento`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `departamento`
 MODIFY `id_departamento` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `empleado`
+=======
+-- AUTO_INCREMENT for table `empleado`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `empleado`
 MODIFY `id_empleado` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `lista_negra`
+=======
+-- AUTO_INCREMENT for table `lista_negra`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `lista_negra`
 MODIFY `id_lista` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `login`
+=======
+-- AUTO_INCREMENT for table `login`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `login`
 MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `persona`
+=======
+-- AUTO_INCREMENT for table `persona`
+>>>>>>> FETCH_HEAD
 --
 ALTER TABLE `persona`
 MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `registro_persona`
 --
 ALTER TABLE `registro_persona`
@@ -354,3 +529,9 @@ MODIFY `cod_registro` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=129;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+=======
+-- AUTO_INCREMENT for table `registro_persona`
+--
+ALTER TABLE `registro_persona`
+MODIFY `cod_registro` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=93;
+>>>>>>> FETCH_HEAD

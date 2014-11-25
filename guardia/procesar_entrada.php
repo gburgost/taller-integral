@@ -54,7 +54,11 @@
     				$apellido = $datos['apellido'];
 
           	 		mysqli_query($conexion, "INSERT INTO registro_persona (cod_registro, nro_garita, rut_persona, rut_guardia, fecha_entrada, hora_entrada, fecha_salida, hora_salida, estado) VALUES('', '$nro_garita', '$rut_persona', '$rut_guardia', '$fecha', '$hora', '', '', '$estado' )");
+<<<<<<< HEAD
             	echo '<div class="alert alert-success" role="alert">Registro de <strong>entrada</strong> exitoso. <br/><br/>Nombre: '.$nombre.' '.$apellido.' <br/> Hora entrada: '.$hora.'</br>Fecha entrada: '.$fecha.'<br/><img src="../img/usuario.png" widht="100" height = "100" class="imguser"/></div>';
+=======
+            	echo '<div class="alert alert-success" role="alert">Registro de <strong>entrada</strong> exitoso. <br/><br/>Nombre: '.$nombre.' '.$apellido.' <br/> Hora entrada: '.$hora.'</br>Fecha entrada: '.$fecha.'<br/><img src="../img/user.png" widht="100" height = "100" class="imguser"/></div>';
+>>>>>>> FETCH_HEAD
             	//echo "<script>setTimeout('document.location.reload()',4000);</script>";
 		          }
           }
