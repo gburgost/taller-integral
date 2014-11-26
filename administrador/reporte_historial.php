@@ -128,7 +128,12 @@ function Footer()
 	$con = new DB;
 	$persona = $con->conectar();
 	$persona = $_GET['rut_persona'];
+<<<<<<< HEAD
 
+=======
+	$desde 	 = $_GET['desde'];
+	$hasta	 = $_GET['hasta'];
+>>>>>>> FETCH_HEAD
 	$strConsulta = "SELECT * from persona where rut_persona =  '$persona'";
 
 	$persona = mysql_query($strConsulta);
