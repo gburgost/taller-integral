@@ -1,4 +1,4 @@
-<form id="fRegister" class="form" name="form" action="registro_empleado.php" method="POST">
+<form id="fRegister" class="form" name="form" action="registro_empleado.php" enctype="multipart/form-data"  method="POST">
 
 	<p>
 		<label for="name">Nombre</label>
@@ -40,6 +40,11 @@
 	<p>
 		<label for="fechades">Fecha de Desvinculación</label>
 		<input id="fechades" class="form-control" name="fechades" type="date" />
+	</p>
+	<p>
+		<label for="foto">Foto de Empleado</label>
+		<input name="foto" type="file" class="" id="foto" />
+
 	</p>
 	<p>
 		<input type="reset" class="btn btn-danger" value="Limpiar" />

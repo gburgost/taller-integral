@@ -5,6 +5,8 @@
 	 date_default_timezone_set("Chile/Continental");
 	$fecha=date("d-m-Y");
 	$hora=date("H:i:s");
+	$rut_guardia = "";
+	$nro_garita = "";
 
 	//Se realiza la validación si el usuario existe en el sistema
 	$myusuario = mysqli_query($conexion, "SELECT rut_persona FROM persona WHERE rut_persona =  '".htmlentities($_POST["rut"])."'");
@@ -15,6 +17,7 @@
     $fila = mysqli_fetch_array($lista);
     $lista = mysqli_num_rows($lista);
     $motivo = $fila['motivo'];
+
 
     //Se muestra si el usario esta en lista negra e imprime su motivo.
     if($lista != 0)
@@ -35,6 +38,7 @@
           	 if ($nmyclave != 0){
 		          $myclave = mysqli_query($conexion, "SELECT rut_persona FROM registro_persona WHERE rut_persona = '".htmlentities($_POST["rut"])."' and estado = 'abierto'");
 		          $nmyclave = mysqli_num_rows($myclave);
+
 		         //Si el estado esta en "abierto" se genera una alerta
 		          if ($nmyclave != 0){
 		          	echo '<div class="alert alert-danger" role="alert">No se ha realizado una salida.</div>';
@@ -43,10 +47,16 @@
 		          //Si el estado es "cerrado" se insertan los datos en la tabla.
 		          else
 		          {
+		          	$consulta = mysqli_query($conexion, "SELECT nombre, apellido, foto FROM persona WHERE rut_persona = '".htmlentities($_POST["rut"])."'");
 		          	$estado = "abierto";
+		          	$datos = mysqli_fetch_array($consulta);
+    				$nombre = $datos['nombre'];
+    				$apellido = $datos['apellido'];
+    				$foto = $datos['foto'];
+
           	 		mysqli_query($conexion, "INSERT INTO registro_persona (cod_registro, nro_garita, rut_persona, rut_guardia, fecha_entrada, hora_entrada, fecha_salida, hora_salida, estado) VALUES('', '$nro_garita', '$rut_persona', '$rut_guardia', '$fecha', '$hora', '', '', '$estado' )");
-            	echo '<div class="alert alert-success" role="alert">Registro de <strong>entrada</strong> exitoso.</div>';
-            	echo "<script>setTimeout('document.location.reload()',4000);</script>";
+            	echo '<div class="alert alert-success" role="alert">Registro de <strong>entrada</strong> exitoso. <br/><br/>Nombre: '.$nombre.' '.$apellido.' <br/> Hora entrada: '.$hora.'</br>Fecha entrada: '.$fecha.'<br/><img src="../administrador/'.$foto.'" widht="100" height = "100" class="imguser"/></div>';
+            	//echo "<script>setTimeout('document.location.reload()',4000);</script>";
 		          }
           }
           else{

@@ -34,6 +34,10 @@ header{
 	margin-top: 10px;
 	max-width: 1000px;
 }
+.print{
+	float: right;
+	font-size: 1.5em;
+}
 
 #titleContent{
 	background: #fff;
@@ -72,6 +76,17 @@ section{
 }
 section article{
 	padding-top: 15px;
+}
+.alert{
+	position: relative;
+}
+.imguser{
+	border-radius: .5em;
+	box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+	position: absolute;
+	right: 2em;
+	top: 1em;
+
 }
 .barCode{
 	border: 1px solid gray;

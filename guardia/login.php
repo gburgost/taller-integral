@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-if (isset($_SESSION['usuario']))
+if (isset($_SESSION['autentica']))
 {
   echo '<script>location.href = "index.php";</script>';
 }
@@ -17,9 +17,9 @@ else
   <link rel="stylesheet" href="../css/jquery.dataTables.css">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/estilo.css">
-
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="../scripts/jquery.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   <script src="../scripts/functions.js"></script>
   <script src="../scripts/prefixfree.min.js"></script>
   <script src="../scripts/jquery.dataTables.js"></script>
@@ -94,3 +94,4 @@ else
 <?php
 }
 ?>
+
