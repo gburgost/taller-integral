@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-if (isset($_SESSION['usuario']))
+if (isset($_SESSION['autentica']))
 {
   echo '<script>location.href = "index.php";</script>';
 }
@@ -17,9 +17,9 @@ else
   <link rel="stylesheet" href="../css/jquery.dataTables.css">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/estilo.css">
-
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="../scripts/jquery.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   <script src="../scripts/functions.js"></script>
   <script src="../scripts/prefixfree.min.js"></script>
   <script src="../scripts/jquery.dataTables.js"></script>
@@ -52,11 +52,6 @@ else
                 <label for="pass">Contraseña: </label>
                 <input type="password" id="pass" class="form-control" name="pass" required />
                 <br>
-                <label for="garita">Punto de acceso: </label>
-                <select name="garita" class="form-control" id="garita">
-                  <option value="1">Garita 1</option>
-                  <option value="2">Garita 2</option>
-                </select><br>
                 <p id="botones">
                   <button name="limpiar" type="reset" class="btn btn-danger">Borrar</button>
                   <button class="btn btn-success" onclick="Validar(document.getElementById('user').value, document.getElementById('pass').value);">Ingresar</button>
@@ -94,3 +89,4 @@ else
 <?php
 }
 ?>
+

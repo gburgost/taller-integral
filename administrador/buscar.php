@@ -6,46 +6,25 @@
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/jquery.dataTables.css">
 	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/jquery-ui.css">
 	<link rel="stylesheet" href="../css/estilo.css">
 	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="../scripts/functions.js"></script>
-	<script src="../scripts/prefixfree.min.js"></script>
 	<script src="../scripts/jquery.dataTables.js"></script>
-	<script src="../scripts/jquery-barcode.js"></script>
-
+	<script src="../scripts/jquery-ui.js"></script>
 	<script>
-		function realizaProceso(serial){
-		        var parametros = {
-		                "serial" : serial
-		        };
-		        $.ajax({
-		                data:  parametros,
-		                url:   '#',
-		                type:  'post',
-		                beforeSend: function () {
-		                        $("#registerBarcode").html("Procesando, espere por favor...");
-		                },
+		$(function() {
 
-		                success:  function () {
-		                        $('#registerBarcode').barcode(serial, "codabar", {barWidth:1, barHeight:60, output: "canvas" }
-								);
-		                }
+			//autocomplete
+			$(".auto").autocomplete({
+				source: "search.php",
+				minLength: 1
+			});
 
-		        });
-		}
-		/*function datos(rut_persona){
-			var parametros = {
-				"rut_persona" : rut_persona
-			};
-				$.ajax({
-					data: parametros,
-					url:  'traerdatos.php',
-					type: 'get',
-					success: function(event){
-						document.getElementById('mostrar').innerHTML = event;
-					}
-				});
-		}*/
+		});
+		$(document).ready( function () {
+		    $('#tSearch').DataTable();
+		} );
 	</script>
 </head>
 <body>
@@ -55,7 +34,7 @@
 				<img src="../img/logompc.png" alt="mpc" width="100" />
 			</figure>
 			<div class="titulos">
-				<h1>Sistema de Registros</h1>
+				<h1>Sistema de Control de <br>Acceso y Asistencia.</h1>
 			</div>
 			<div class="usuario">
 				<strong>Administrador</strong>
@@ -63,6 +42,7 @@
 			</div>
 
 		</header>
+		<h3>Módulo Administrador</h3>
 		<nav>
 			<ul class="nav nav-tabs">
 				<li>
@@ -76,8 +56,24 @@
 		<header id="titleContent"><h4>Buscar Persona</h4></header>
 		<section>
 			<article id="aSearch">
-			<?php
-				include_once("conexion.php");
+			<form method="POST" action="return false" onsubmit="return false">
+				<div class="row">
+					<div class="col-md-6">
+						<label>Nombre: </label>
+						<input id="persona" class="auto form-control" type="text" required/>
+					</div>
+					<div class="col-md-6">
+						<label for="desde">Desde: </label>
+						<input type="date" id="desde" name="desde" class="form-control"/><br/>
+						<label for="hasta">Hasta: </label>
+						<input type="date" id="hasta" name="hasta" class="form-control"/><br/>
+						<button class="btn btn-success"  onclick="consultar(document.getElementById('persona').value,document.getElementById('desde').value, document.getElementById('hasta').value);">Consultar</button>
+						<button class="btn btn-danger" type="reset">Limpiar</button>
+					</div>
+				</div>
+				<hr>
+			<!--<?php
+				/*include_once("conexion.php");
 				$con = new DB;
 				$buscar = $con->conectar();
 				$strConsulta = "SELECT rut_persona, nombre, apellido, tipo_persona from persona";
@@ -111,8 +107,7 @@
 				echo '</tbody>';
 				echo "</table>";
 			?>
-
-<!--
+			<!--
 				<table id="tSearch" class="table table-hover" cellspacing="1">
 					<caption>Listado de Personas</caption>
 					<thead>
@@ -167,7 +162,24 @@
 						</div>
 					</div>
 				</div>-->
+			</form>
+			<script>
+                function consultar(persona, desde, hasta)
+                {
+                  $.ajax({
+                    url: "consultar.php",
+                    type: "POST",
+                    data: "persona="+persona+"&desde="+desde+"&hasta="+hasta,
+                    success: function(resp){
+                      $('#resultados').html(resp);
+                    }
+                  });
+                }
+                </script>
+                <div id="resultados">
+			</div>
 			</article>
+
 		</section>
 	</div>
 	<footer>

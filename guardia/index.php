@@ -2,6 +2,7 @@
 <?@session_start();
 if($_SESSION["autentica"] != "SIP"){
 	header("Location: login.php");
+	echo"AAA";
 	exit();
 }
 ?>
@@ -9,14 +10,14 @@ if($_SESSION["autentica"] != "SIP"){
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no"/>
 	<title>MPC registros</title>
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/jquery.dataTables.css">
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/estilo.css">
-	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	 <script src="../scripts/jquery.min.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="../scripts/functions.js"></script>
 	<script src="../scripts/prefixfree.min.js"></script>
 	<script src="../scripts/jquery.dataTables.js"></script>
@@ -31,7 +32,7 @@ if($_SESSION["autentica"] != "SIP"){
             type: "POST",
             data: "rut="+rut,
             success: function(resp){
-              $('#resultado').fadeToggle(5000).html(resp);
+              $('#resultado').html(resp);
               return false;
 
             }
@@ -44,7 +45,7 @@ if($_SESSION["autentica"] != "SIP"){
             type: "POST",
             data: "rut="+rut,
             success: function(resp){
-              $('#resultado').fadeToggle(5000).html(resp);
+              $('#resultado').html(resp);
               return false;
 
             }
@@ -59,20 +60,26 @@ if($_SESSION["autentica"] != "SIP"){
 				<img src="../img/logompc.png" alt="mpc" width="100" />
 			</figure>
 			<div class="titulos">
-				<h1>Sistema de Ingreso y Salida</h1>
+				<h1>Sistema de Control de <br>Acceso y Asistencia.</h1>
 			</div>
 			<div class="usuario">
 				<strong><?php
 					$guardia = $_SESSION["usuarioactual"];
-					$buscar = mysqli_query($conexion, "SELECT nombre_guardia, apellido_guardia from guardia WHERE rut_guardia = '$guardia'");
-					$fila = mysqli_fetch_array($buscar, MYSQLI_ASSOC);
-					echo 'Guardia: '.$fila["nombre_guardia"].' '.$fila["apellido_guardia"];
+					$encontrar = mysqli_query($conexion, "SELECT nombre_guardia, apellido_guardia FROM guardia WHERE rut_guardia = '$guardia'");
+					$buscar = mysqli_query($conexion, "SELECT nro_garita, jornada FROM turno_guardia WHERE rut_guardia = '$guardia'");
+
+					$columna = mysqli_fetch_array($encontrar);
+					$fila = mysqli_fetch_array($buscar);
+
+					echo 'Guardia: '.$columna["nombre_guardia"].' '.$columna["apellido_guardia"];
 				?></strong>
-				<p><?php echo 'Rut: ' .$guardia; ?></p>
+				<p><?php echo 'Rut: ' .$guardia; ?><br>
+				<?php echo 'Garita: '.$fila["nro_garita"];?></p>
 				<a href="logout.php">Cerrar Sesión</a>
 			</div>
 
 		</header>
+		<h3>Módulo Guardia</h3>
 		<nav>
 			<ul class="nav nav-tabs">
 				<li class="active">

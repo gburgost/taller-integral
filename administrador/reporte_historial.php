@@ -127,7 +127,8 @@ function Footer()
 
 	$con = new DB;
 	$persona = $con->conectar();
-	$persona= $_GET['rut_persona'];
+	$persona = $_GET['rut_persona'];
+
 	$strConsulta = "SELECT * from persona where rut_persona =  '$persona'";
 
 	$persona = mysql_query($strConsulta);
@@ -160,6 +161,8 @@ function Footer()
 
 	$historial = $con->conectar();
 	$persona= $_GET['rut_persona'];
+	$desde 	 = $_GET['desde'];
+	$hasta	 = $_GET['hasta'];
 	$strConsulta =
 		 "SELECT registro_persona.fecha_entrada,
 				 registro_persona.hora_entrada,
@@ -170,7 +173,7 @@ function Footer()
 
 	FROM registro_persona
 	Inner Join persona ON registro_persona.rut_persona = persona.rut_persona
-	WHERE persona.rut_persona = '$persona'";
+	WHERE persona.rut_persona = '$persona' AND registro_persona.fecha_entrada >= '$desde' AND registro_persona.fecha_salida <= '$hasta'";
 
 	$historial = mysql_query($strConsulta);
 	$numfilas = mysql_num_rows($historial);
