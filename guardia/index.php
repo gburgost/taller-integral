@@ -65,6 +65,7 @@ if($_SESSION["autentica"] != "SIP"){
 			<div class="usuario">
 				<strong><?php
 					$guardia = $_SESSION["usuarioactual"];
+<<<<<<< HEAD
 					$encontrar = mysqli_query($conexion, "SELECT nombre_guardia, apellido_guardia FROM guardia WHERE rut_guardia = '$guardia'");
 					$buscar = mysqli_query($conexion, "SELECT nro_garita, jornada FROM turno_guardia WHERE rut_guardia = '$guardia'");
 
@@ -72,6 +73,11 @@ if($_SESSION["autentica"] != "SIP"){
 					$fila = mysqli_fetch_array($buscar);
 
 					echo 'Guardia: '.$columna["nombre_guardia"].' '.$columna["apellido_guardia"];
+=======
+					$buscar = mysqli_query($conexion, "SELECT nombre_guardia, apellido_guardia FROM guardia WHERE rut_guardia = '$guardia'");
+					$fila = mysqli_fetch_array($buscar);
+					echo 'Guardia: '.$fila["nombre_guardia"].' '.$fila["apellido_guardia"];
+>>>>>>> FETCH_HEAD
 				?></strong>
 				<p><?php echo 'Rut: ' .$guardia; ?><br>
 				<?php echo 'Garita: '.$fila["nro_garita"];?></p>

@@ -81,12 +81,24 @@ section article{
 	position: relative;
 }
 .imguser{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
 	border-radius: .5em;
 	box-shadow: 1px 1px 10px rgba(0,0,0,.5);
 	position: absolute;
 	right: 2em;
 	top: 1em;
 
+<<<<<<< HEAD
+=======
+=======
+	position: absolute;
+	right: 2em;
+	top: 1em;
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
 }
 .barCode{
 	border: 1px solid gray;
